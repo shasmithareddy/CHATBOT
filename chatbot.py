@@ -8,7 +8,8 @@ from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.models import load_model
 
 lemmatizer = WordNetLemmatizer()
-intents = json.loads(open('C:/Users/shasm/Downloads/chatbot/intents.json').read())
+#intents = json.loads(open('C:/Users/shasm/Downloads/chatbot/intents.json').read())
+intents = json.loads(open('intents.json').read())
 
 
 words = pickle.load(open('words.pkl', 'rb'))
