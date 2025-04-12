@@ -24,14 +24,29 @@
       appendMessage("You", msg);
       msgInput.value = "";
 
-      const res = await fetch("/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: msg })
-      });
+      try {
+        const res = await fetch("/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: msg })
+        });
 
-      const data = await res.json();
-      appendMessage("Bot", data.reply);
+        if (!res.ok) {
+          console.error("Failed to fetch response from server:", res.status);
+          appendMessage("Bot", "Error: Could not get a response.");
+          return;
+        }
+
+        const data = await res.json();
+        if (data && data.reply) {
+          appendMessage("Bot", data.reply);
+        } else {
+          appendMessage("Bot", "Error: No reply from server.");
+        }
+      } catch (error) {
+        console.error("Error during request:", error);
+        appendMessage("Bot", "Error: Could not reach server.");
+      }
     }
 
     function appendMessage(sender, text) {
