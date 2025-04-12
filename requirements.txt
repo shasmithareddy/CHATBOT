@@ -3,3 +3,4 @@ tensorflow
 flask-cors
 numpy
 requests
+nltk
