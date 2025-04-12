@@ -20,8 +20,7 @@ if __name__ == "__main__":
     app.run(host="0.0.0.0", port=port)
 '''
 from flask import Flask, render_template, request, jsonify
-from chatbot import get_response
-import os
+from chatbot import get_response  # assuming chatbot.py has get_response()
 
 app = Flask(__name__)
 
@@ -31,13 +30,21 @@ def home():
 
 @app.route("/chat", methods=["POST"])
 def chat():
+    # Get the JSON data from the POST request
     data = request.get_json()
-    message = data.get("message")
-    if not message:
+    user_message = data.get("message")
+
+    # If no message is provided, return a response
+    if not user_message:
         return jsonify({"reply": "Please enter a message."}), 400
-    response = get_response(message)
-    return jsonify({"reply": response})
+
+    # Get the chatbot's reply
+    reply = get_response(user_message)
+
+    # Return the reply as a JSON response
+    return jsonify({"reply": reply})
 
 if __name__ == "__main__":
+    # Dynamically get the port from the environment variable, defaulting to 5000 if not set
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
