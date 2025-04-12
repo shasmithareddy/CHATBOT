@@ -112,11 +112,23 @@ def predict_class(sentence):
     return [{'intent': classes[r[0]], 'probability': str(r[1])} for r in results]
 
 def get_response(message):
+    # Get the predicted intent from the input message
     intents_list = predict_class(message)
+    
+    # Return the response from the intents
     if intents_list:
         tag = intents_list[0]['intent']
         for i in intents['intents']:
             if i['tag'] == tag:
                 return random.choice(i['responses'])
     return "Sorry, I didn't understand that."
+
+# Rename the function to avoid name clashes with the new get_response function
+def get_response_from_intents(intents_list, intents_json):
+    tag = intents_list[0]['intent']
+    for i in intents_json['intents']:
+        if i['tag'] == tag:
+            return random.choice(i['responses'])
+    return "I'm not sure I understand."
+
 
