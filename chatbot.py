@@ -141,6 +141,12 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.models import load_model
 
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+
+
 # Initialize NLP tools
 lemmatizer = WordNetLemmatizer()
 
