@@ -9,7 +9,8 @@ from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 
 # Load intents file
-intents = json.loads(open('C:/Users/shasm/Downloads/chatbot/intents.json').read())
+#intents = json.loads(open('C:/Users/shasm/Downloads/chatbot/intents.json').read())
+intents = json.loads(open('intents.json').read())
 
 words = []
 classes = []
