@@ -1,4 +1,4 @@
-import os
+''' import os
 from flask import Flask, render_template, request, jsonify
 from chatbot import get_response  # Assuming you have this method defined in chatbot.py
 
@@ -16,5 +16,28 @@ def chat():
 
 if __name__ == "__main__":
     # Dynamically get the port from environment variable, defaulting to 5000 if not set
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+'''
+import os
+from flask import Flask, render_template, request, jsonify
+from chatbot import get_response  # Make sure get_response handles input properly
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+@app.route("/chat", methods=["POST"])
+def chat():
+    user_text = request.get_json().get("message")
+    if not user_text:
+        return jsonify({"reply": "Sorry, I didn't get that."})
+    
+    response = get_response(user_text)
+    return jsonify({"reply": response})  # Match the key used in your JS
+
+if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
