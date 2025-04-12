@@ -37,7 +37,7 @@ def chat():
 
     # If no message is provided, return a response
     if not user_message:
-        return jsonify({"reply": "Please enter a message."}), 
+        return jsonify({"reply": "Please enter a message."}), 400
 
     # Get the chatbot's reply
     reply = get_response(user_message)
