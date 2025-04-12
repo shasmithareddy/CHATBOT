@@ -1,0 +1,156 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi there", "How are you", "Is anyone there?", "Hey", "Hola", "Hello", "Good day"
+      ],
+      "responses": [
+        "Hello", "Good to see you again", "Hi there, how can I help?"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"
+      ],
+      "responses": [
+        "See you!", "Have a nice day", "Bye! Come back again soon."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"
+      ],
+      "responses": [
+        "My pleasure", "You're Welcome"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "help",
+      "patterns": [
+        "Can you help me?", "I need help", "Help me out", "Can you assist?", "I don't understand"
+      ],
+      "responses": [
+        "Sure! How can I assist you?", "I'm here to help! What do you need?", "What can I help you with?"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "complaints",
+      "patterns": [
+        "I'm unhappy", "This is frustrating", "I don't like this", "This isn't working", "I'm upset"
+      ],
+      "responses": [
+        "I'm sorry to hear that. How can I help you resolve this?", "I understand your frustration. Let me know how I can assist.",
+        "Sorry for the inconvenience. How can I make this better for you?"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "jokes",
+      "patterns": [
+        "Tell me a joke", "Make me laugh", "Tell a funny story", "Can you crack a joke?"
+      ],
+      "responses": [
+        "Why don't skeletons fight each other? They don't have the guts!",
+        "Why did the computer go to the doctor? It had a virus!",
+        "I told my computer I needed a break, and now it won't stop sending me Kit-Kats!"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "weather",
+      "patterns": [
+        "What's the weather like today?", "Is it going to rain?", "How's the weather?", "What is the temperature?"
+      ],
+      "responses": [
+        "I don't have access to live weather data right now, but you can check online or use a weather app!",
+        "I can't provide weather updates, but you can always use a weather app or website."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "location",
+      "patterns": [
+        "Where are you located?", "Where are you?", "What's your location?", "Where can I find you?"
+      ],
+      "responses": [
+        "I am a chatbot, I don't have a physical location, but I'm here to assist you anytime!",
+        "I exist in the digital world to help you out. No physical location for me!"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "good_morning",
+      "patterns": [
+        "Good morning", "Morning", "Good day", "Rise and shine"
+      ],
+      "responses": [
+        "Good morning! How can I help you today?", "Hello! Hope you have a great day ahead!",
+        "Good morning, how are you doing?"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "motivation",
+      "patterns": [
+        "I need some motivation", "Give me some motivation", "I'm feeling down", "Help me stay motivated"
+      ],
+      "responses": [
+        "Believe in yourself! You've got this!", "Don't give up! Every step counts!", "Keep going! Success is just around the corner!"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "sports",
+      "patterns": [
+        "What's the latest in sports?", "Who won the game?", "Tell me about the game", "Sports news"
+      ],
+      "responses": [
+        "I don't have live sports updates, but you can check out the latest scores on sports websites!",
+        "I'm not up-to-date with sports news, but I recommend checking your favorite sports app for updates!"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "technology",
+      "patterns": [
+        "Tell me about the latest technology", "What's new in tech?", "Tech news", "Any tech updates?"
+      ],
+      "responses": [
+        "Tech is always evolving! You can check tech blogs or news websites for the latest trends.",
+        "I can't provide real-time tech news, but tech sites like TechCrunch or Wired always have the latest updates."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "advice",
+      "patterns": [
+        "I need some advice", "Can you give me advice?", "What should I do?", "I don't know what to do"
+      ],
+      "responses": [
+        "It's okay to feel uncertain. Take your time and make thoughtful decisions.",
+        "My advice: Take a step back, assess the situation, and make an informed choice.",
+        "Trust your instincts, but also consider the advice of those you trust!"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "self_care",
+      "patterns": [
+        "I need to relax", "How can I take care of myself?", "I'm feeling stressed", "What can I do for self-care?"
+      ],
+      "responses": [
+        "Take a deep breath, rest, and do something you enjoy. Self-care is important!",
+        "Try taking a break, enjoying some time outdoors, or practicing mindfulness.",
+        "Self-care is vital. A warm bath, a good book, or some light exercise might help."
+      ],
+      "context": [""]
+    }
+  ]
+}
